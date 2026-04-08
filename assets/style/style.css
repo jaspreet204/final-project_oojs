@@ -33,3 +33,45 @@ body {
   text-align: center;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
 }
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.subtitle {
+  color: #94a3b8;
+  margin-bottom: 28px;
+  font-size: 1rem;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: #1f2937;
+  border: 1px solid #2c3a4d;
+  border-radius: 14px;
+  padding: 18px;
+  width: 180px;
+}
+
+.stat-box span {
+  display: block;
+  color: #94a3b8;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.stat-box p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
