@@ -9,18 +9,29 @@ main {
 body {
   font-family: Arial, sans-serif;
   min-height: 100vh;
-  background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
-  color: #ffffff;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+
+  background: url("../media/game.background.jpg") no-repeat center center/cover;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
 }
 
 .container {
   width: 100%;
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 .game-card {
