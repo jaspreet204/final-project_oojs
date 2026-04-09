@@ -7,9 +7,38 @@
     <meta name="description" content="html, css, web, web development, javascript">
     <title>Fast typing Game</title>
     <link rel="stylesheet" href="./assets/style/style.css" media="all" />
-    <script src="./assets/script/app.js" type="module" defer></script>
+    <script src="./assets/script/script.js" type="module" defer></script>
 </head>
 <body>
-    
+     <main class="container">
+    <section class="game-card">
+      <h1>BlinkType</h1>
+      <p class="subtitle">Unleash your typing power.</p>
+      <div class="stats">
+        <div class="stat-box">
+          <span>Time Left</span>
+          <p id="time">99</p>
+        </div>
+        <div class="stat-box">
+          <span>Hits</span>
+          <p id="hits">0</p>
+        </div>
+      </div>
+      <div class="word-box">
+        <p class="word-title">Current Word</p>
+        <h2 id="current-word">Press Start</h2>
+      </div>
+      <input
+        type="text"
+        id="word-input"
+        placeholder="Type the word here..."
+        autocomplete="off"
+      >
+      <div class="buttons">
+        <button id="start-btn">Start Game</button>
+        <button id="restart-btn">New Game</button>
+      </div>
+    </section>
+  </main>   
 </body>
 </html>

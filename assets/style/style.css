@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+main {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f172a, #111827, #1e293b);
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.game-card {
+  width: 100%;
+  max-width: 720px;
+  background: #111827;
+  border: 1px solid #243041;
+  border-radius: 20px;
+  padding: 35px 30px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px rgba(59, 130, 246, 0.8);
+}
+
+.subtitle {
+  color: #9ca3af;
+  margin-bottom: 28px;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+}
+
+.stats {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.stat-box {
+  background: #1f2937;
+  border: 1px solid #2c3a4d;
+  border-radius: 14px;
+  padding: 18px;
+  width: 180px;
+}
+
+.stat-box span {
+  display: block;
+  color: #94a3b8;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.stat-box p {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+.word-box {
+  background: #1f2937;
+  border: 2px solid #3b82f6;
+  border-radius: 16px;
+  padding: 25px 20px;
+  margin-bottom: 20px;
+}
+
+.word-title {
+  color: #94a3b8;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+#current-word {
+  font-size: 2rem;
+  color: #ffffff;
+  word-break: break-word;
+}
+
+#word-input {
+  width: 100%;
+  padding: 15px;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#word-input:focus {
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.5);
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+#message {
+  margin-top: 18px;
+  color: #cbd5e1;
+  font-size: 1rem;
+  min-height: 24px;
+}
