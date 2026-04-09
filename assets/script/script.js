@@ -29,6 +29,14 @@ function resetGame (){
     nextWord();
 }
 
+function checkWord(){
+    if(wordinput.value === currentWord){
+        hits++;
+        wordinput.value = '';
+        nextWord();
+    }
+}
+
 function nextWord(){
     currentWord = wordlist[hits];
     displayWord.innerText = currentWord;
@@ -36,4 +44,8 @@ function nextWord(){
 
 restart.addEventListener("click", function () {
     resetGame();
+});
+
+wordinput.addEventListener("input", function () { /* input event happens whenever the user modifies the value of wordinput */
+    checkWord();
 });
