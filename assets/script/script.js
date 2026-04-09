@@ -26,12 +26,14 @@ let hits = 0;
 function resetGame (){
     /* A shuffle will be added here later */
     hits = 0;
+    displayHits.innerText = 0;
     nextWord();
 }
 
 function checkWord(){
     if(wordinput.value === currentWord){
         hits++;
+        displayHits.innerText = hits;
         wordinput.value = '';
         nextWord();
     }
