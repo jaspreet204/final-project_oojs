@@ -8,7 +8,7 @@ const displayTimer = document.getElementById('time');
 const displayWord = document.getElementById('current-word');
 const displayHits = document.getElementById('hits');
 
-const wordlist = ['dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building', 'population', 
+let wordlist = ['dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building', 'population', 
     'weather', 'bottle', 'history', 'dream', 'character', 'money', 'absolute', 'discipline', 'machine', 
     'accurate', 'connection', 'rainbow', 'bicycle', 'eclipse', 'calculator', 'trouble', 'watermelon', 
     'developer', 'philosophy', 'database', 'periodic', 'capitalism', 'abominable', 'component', 
@@ -26,12 +26,21 @@ let time = 99;
 let ticker;
 
 function resetGame (){
-    /* A shuffle will be added here later */
     hits = 0;
-    time = 99;
     displayHits.innerText = 0;
+    shuffleList();
     nextWord();
+    time = 99;
     ticker = setInterval(timer, 1000);
+}
+
+function shuffleList() {
+    /* A simple fischer-yates shuffle algorithm */
+    /* Iterates through the array, swapping each entry with one that hasn't been iterated through yet */
+    for(let i = 89; i >= 1; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [wordlist[i], wordlist[j]] = [wordlist[j], wordlist[i]];
+    }
 }
 
 function timer() {
@@ -48,7 +57,7 @@ function checkWord(){
         hits++;
         displayHits.innerText = hits;
         wordinput.value = '';
-        if(hits === 99) {
+        if(hits === 90) {
             endGame();
         } else {
             nextWord();
