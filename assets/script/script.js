@@ -4,7 +4,7 @@ const start = document.getElementById('start-btn');
 const restart = document.getElementById('restart-btn');
 const wordinput = document.getElementById('word-input');
 
-const timer = document.getElementById('time');
+const displayTimer = document.getElementById('time');
 const displayWord = document.getElementById('current-word');
 const displayHits = document.getElementById('hits');
 
@@ -22,12 +22,25 @@ const wordlist = ['dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'buildin
 
 let currentWord;
 let hits = 0;
+let time = 99;
+let ticker;
 
 function resetGame (){
     /* A shuffle will be added here later */
     hits = 0;
+    time = 99;
     displayHits.innerText = 0;
     nextWord();
+    ticker = setInterval(timer, 1000);
+}
+
+function timer() {
+    time--;
+    displayTimer.innerText = time;
+    if(time === 0){
+        clearInterval(ticker);
+        endGame();
+    }
 }
 
 function checkWord(){
@@ -35,13 +48,21 @@ function checkWord(){
         hits++;
         displayHits.innerText = hits;
         wordinput.value = '';
-        nextWord();
+        if(hits === 99) {
+            endGame();
+        } else {
+            nextWord();
+        }
     }
 }
 
 function nextWord(){
     currentWord = wordlist[hits];
     displayWord.innerText = currentWord;
+}
+
+function endGame() {
+
 }
 
 restart.addEventListener("click", function () {
