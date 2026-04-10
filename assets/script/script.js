@@ -26,6 +26,7 @@ let time = 99;
 let ticker;
 
 function resetGame (){
+    wordinput.removeAttribute("disabled");
     hits = 0;
     displayHits.innerText = 0;
     shuffleList();
@@ -71,7 +72,7 @@ function nextWord(){
 }
 
 function endGame() {
-
+    wordinput.setAttribute("disabled", '');
 }
 
 restart.addEventListener("click", function () {
