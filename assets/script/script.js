@@ -7,15 +7,20 @@ const displayTimer = document.getElementById('time');
 const displayWord = document.getElementById('current-word');
 const displayHits = document.getElementById('hits');
 
+const displayScore = document.getElementById('score-summary');
+const finalDate = document.getElementById('final-date')
+const finalHits = document.getElementById('final-hits')
+const finalPercentage = document.getElementById('final-percentage')
+
 class Score {
     #date;
     #hits;
     #percentage;
 
     constructor(hits, percentage){
-        this.date = new Date();
-        this.hits = hits;
-        this.percentage = percentage;
+        this.#date = new Date();
+        this.#hits = hits;
+        this.#percentage = percentage;
     }
 
     get date() { return this.#date }
@@ -93,8 +98,12 @@ function nextWord(){
 
 function endGame() {
     wordinput.setAttribute("disabled", '');
-    score = new Score(hits, (hits/90));
-    wordinput.value = '0';
+    let score = new Score(hits, (hits/90));
+    finalDate.innerText = `Date: ${score.date.toDateString()}`
+    finalHits.innerText = `Score: ${score.hits}`
+    finalPercentage.innerText = `Completed: ${score.percentage}%`
+    displayScore.showModal();
+    wordinput.value = '';
     music.pause();
 }
 

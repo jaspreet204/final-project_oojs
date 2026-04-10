@@ -211,16 +211,17 @@ button:hover {
 }
 
 #score-summary {
-  display: none;
-  margin-top: 20px;
+  height: 200px;
+  width: 400px;
   padding: 20px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  text-align: center;
+  background: rgba(71, 77, 101, 0.489);
+  border: 2px solid rgba(59, 130, 246, 0.6);
+  text-align: left;
 }
 
 #score-summary h3 {
+  align-self: center;
   font-size: 1.4rem;
   margin-bottom: 12px;
   color: #ffffff;
@@ -230,6 +231,10 @@ button:hover {
   margin: 8px 0;
   color: #dbeafe;
   font-size: 1rem;
+}
+
+::backdrop {
+  background: rgba(0, 0, 0, 0.5)
 }
 
 #word-input:disabled {
