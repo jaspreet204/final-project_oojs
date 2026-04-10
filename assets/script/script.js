@@ -1,14 +1,32 @@
 'use strict';
 
 const start = document.getElementById('start-btn');
-const restart = document.getElementById('restart-btn');
 const wordinput = document.getElementById('word-input');
 
-const timer = document.getElementById('time');
+const displayTimer = document.getElementById('time');
 const displayWord = document.getElementById('current-word');
 const displayHits = document.getElementById('hits');
 
-const wordlist = ['dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building', 'population', 
+class Score {
+    #date;
+    #hits;
+    #percentage;
+
+    constructor(hits, percentage){
+        this.date = new Date();
+        this.hits = hits;
+        this.percentage = percentage;
+    }
+
+    get date() { return this.#date }
+    get hits() { return this.#hits }
+    get percentage() { return this.#percentage }
+}
+
+const music = new Audio('./assets/media/game-music.mp3');
+music.type = 'audio/mp3';
+
+let wordlist = ['dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building', 'population', 
     'weather', 'bottle', 'history', 'dream', 'character', 'money', 'absolute', 'discipline', 'machine', 
     'accurate', 'connection', 'rainbow', 'bicycle', 'eclipse', 'calculator', 'trouble', 'watermelon', 
     'developer', 'philosophy', 'database', 'periodic', 'capitalism', 'abominable', 'component', 
@@ -22,12 +40,36 @@ const wordlist = ['dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'buildin
 
 let currentWord;
 let hits = 0;
+let time = 99;
+let ticker;
 
 function resetGame (){
-    /* A shuffle will be added here later */
+    wordinput.removeAttribute("disabled");
     hits = 0;
     displayHits.innerText = 0;
+    shuffleList();
     nextWord();
+    time = 99;
+    ticker = setInterval(timer, 1000);
+    music.play();
+}
+
+function shuffleList() {
+    /* A simple fischer-yates shuffle algorithm */
+    /* Iterates through the array, swapping each entry with one that hasn't been iterated through yet */
+    for(let i = 89; i >= 1; i--){
+        const j = Math.floor(Math.random() * (i + 1));
+        [wordlist[i], wordlist[j]] = [wordlist[j], wordlist[i]];
+    }
+}
+
+function timer() {
+    time--;
+    displayTimer.innerText = time;
+    if(time === 0){
+        clearInterval(ticker);
+        endGame();
+    }
 }
 
 function checkWord(){
@@ -35,7 +77,11 @@ function checkWord(){
         hits++;
         displayHits.innerText = hits;
         wordinput.value = '';
-        nextWord();
+        if(hits === 90) {
+            endGame();
+        } else {
+            nextWord();
+        }
     }
 }
 
@@ -44,7 +90,13 @@ function nextWord(){
     displayWord.innerText = currentWord;
 }
 
-restart.addEventListener("click", function () {
+function endGame() {
+    wordinput.setAttribute("disabled", '');
+    score = new Score(hits, (hits/90));
+    music.pause();
+}
+
+start.addEventListener("click", function () {
     resetGame();
 });
 
