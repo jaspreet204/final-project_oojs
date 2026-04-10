@@ -20,9 +20,10 @@ BlinkType is an interactive typing game designed to test speed, focus, and accur
 
 1. Click **Start Game**
 2. A word appears on the screen
-3. Type the word correctly in the input field
-4. Continue typing as fast as possible
-5. Game ends when time runs out or all words are completed
+3. Type the word correctly in the input field (case-insensitive)
+4. A new word replaces it as soon as it's spelled correctly
+5. Continue typing each word as fast as possible
+6. Game ends when time runs out or all words are completed
 
 ---
 
@@ -30,8 +31,8 @@ BlinkType is an interactive typing game designed to test speed, focus, and accur
 
 At the end of the game, players can view:
 -  Date of the game
--  Total correct words (hits)
--  Accuracy percentage
+-  Number of completed words (hits)
+-  Percentage of words completed overall
 
 ---
 
