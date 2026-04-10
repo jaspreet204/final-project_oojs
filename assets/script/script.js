@@ -8,6 +8,22 @@ const displayTimer = document.getElementById('time');
 const displayWord = document.getElementById('current-word');
 const displayHits = document.getElementById('hits');
 
+class Score {
+    #date;
+    #hits;
+    #percentage;
+
+    constructor(hits, percentage){
+        this.date = new Date();
+        this.hits = hits;
+        this.percentage = percentage;
+    }
+
+    get date() { return this.#date }
+    get hits() { return this.#hits }
+    get percentage() { return this.#percentage }
+}
+
 let wordlist = ['dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building', 'population', 
     'weather', 'bottle', 'history', 'dream', 'character', 'money', 'absolute', 'discipline', 'machine', 
     'accurate', 'connection', 'rainbow', 'bicycle', 'eclipse', 'calculator', 'trouble', 'watermelon', 
@@ -73,6 +89,7 @@ function nextWord(){
 
 function endGame() {
     wordinput.setAttribute("disabled", '');
+    score = new Score(hits, (hits/90));
 }
 
 restart.addEventListener("click", function () {
