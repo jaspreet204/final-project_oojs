@@ -207,3 +207,25 @@ button:hover {
   font-size: 1rem;
   min-height: 24px;
 }
+
+#score-summary {
+  display: none;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+#score-summary h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  color: #ffffff;
+}
+
+#score-summary p {
+  margin: 8px 0;
+  color: #dbeafe;
+  font-size: 1rem;
+}
