@@ -136,7 +136,7 @@ h1 {
    box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
 }
 
-.buttons {
+.button {
   display: flex;
   gap: 15px;
   justify-content: center;
