@@ -1,7 +1,6 @@
 'use strict';
 
 const start = document.getElementById('start-btn');
-const restart = document.getElementById('restart-btn');
 const wordinput = document.getElementById('word-input');
 
 const displayTimer = document.getElementById('time');
@@ -23,6 +22,9 @@ class Score {
     get hits() { return this.#hits }
     get percentage() { return this.#percentage }
 }
+
+const music = new Audio('./assets/media/game-music.mp3');
+music.type = 'audio/mp3';
 
 let wordlist = ['dinosaur', 'love', 'pineapple', 'calendar', 'robot', 'building', 'population', 
     'weather', 'bottle', 'history', 'dream', 'character', 'money', 'absolute', 'discipline', 'machine', 
@@ -49,6 +51,7 @@ function resetGame (){
     nextWord();
     time = 99;
     ticker = setInterval(timer, 1000);
+    music.play();
 }
 
 function shuffleList() {
@@ -90,9 +93,10 @@ function nextWord(){
 function endGame() {
     wordinput.setAttribute("disabled", '');
     score = new Score(hits, (hits/90));
+    music.pause();
 }
 
-restart.addEventListener("click", function () {
+start.addEventListener("click", function () {
     resetGame();
 });
 
