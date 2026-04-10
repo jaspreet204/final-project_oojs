@@ -5,14 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content= "jaspreet and Blake">
     <meta name="description" content="html, css, web, web development, javascript">
-    <title>Fast typing Game</title>
+    <title>BlinkType  |  Fast typing Game</title>
     <link rel="stylesheet" href="./assets/style/style.css" media="all" />
     <script src="./assets/script/script.js" type="module" defer></script>
 </head>
 <body>
      <main class="container">
     <section class="game-card">
-      <h1>BlinkType</h1>
+     <h1 class="logo-text">Blink<span>Type</span></h1> 
       <p class="subtitle">Unleash your typing power.</p>
       <div class="stats">
         <div class="stat-box">
@@ -34,9 +34,18 @@
         placeholder="Type the word here..."
         autocomplete="off"
       >
+       <audio id="bg-music" loop>
+        <source src="assets/media/game-music.mp3" type="audio/mpeg">
+       </audio>
       <div class="buttons">
-        <button id="start-btn">Start Game</button>
-        <button id="restart-btn">New Game</button>
+        <button id="start-btn">New Game</button>
+      </div>
+      <p id="message">Ready to play?</p>
+      <div id="score-summary">
+        <h3>Final Score</h3>
+        <p id="final-date">Date:</p>
+        <p id="final-hits">Hits:</p>
+        <p id="final-percentage">Percentage:</p>
       </div>
     </section>
   </main>   
