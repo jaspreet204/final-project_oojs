@@ -49,6 +49,7 @@ function resetGame (){
     displayHits.innerText = 0;
     shuffleList();
     nextWord();
+    wordinput.focus();
     time = 99;
     ticker = setInterval(timer, 1000);
     music.play();
@@ -73,7 +74,7 @@ function timer() {
 }
 
 function checkWord(){
-    if(wordinput.value === currentWord){
+    if(wordinput.value.trim().toUpperCase() === currentWord.toUpperCase()){
         hits++;
         displayHits.innerText = hits;
         wordinput.value = '';
@@ -93,6 +94,7 @@ function nextWord(){
 function endGame() {
     wordinput.setAttribute("disabled", '');
     score = new Score(hits, (hits/90));
+    wordinput.value = '0';
     music.pause();
 }
 

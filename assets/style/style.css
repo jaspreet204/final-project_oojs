@@ -127,7 +127,7 @@ body::before {
 }
 
 .stat-box p {
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: bold;
   color: #38bdf8;
 }
@@ -150,10 +150,12 @@ body::before {
   font-size: 2rem;
   color: #ffffff;
   word-break: break-word;
+  -webkit-user-select: none; /* needed for this (unselectable text) to work on Safari apparently */
+  user-select: none;
 }
 
 #word-input {
-  width: 100%;
+  width: 90%;
   padding: 15px;
   font-size: 1.1rem;
   border-radius: 12px;
