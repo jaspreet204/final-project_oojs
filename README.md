@@ -41,6 +41,8 @@ BlinkType is a fast typing web game where players type words within a limited ti
 4. Try to achieve the highest score
 5. View your score and compare with top scores
 
+## Live Demo  site is live at https://jaspreet204.github.io/final-project_oojs/
+
 ## Authors
 - Jaspreet  UI Design (HTML, CSS, Scoreboard Layout)
 - Blake  Game Logic (JavaScript, localStorage, Sorting System)
