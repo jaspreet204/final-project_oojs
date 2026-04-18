@@ -273,3 +273,8 @@ button:hover {
   border: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.95rem;
 }
+
+#scores-list li:first-child {
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
