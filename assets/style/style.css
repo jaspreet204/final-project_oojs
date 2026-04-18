@@ -107,18 +107,18 @@ body::before {
 }
 .stats {
   display: flex;
-  gap: 20px;
+  gap: 18px;
   justify-content: center;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
   flex-wrap: wrap;
 }
 
 .stat-box {
   background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 14px;
-  padding: 18px;
-  width: 180px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  padding: 14px 16px;
+  width: 170px;
 }
 
 .stat-box span {
@@ -129,7 +129,7 @@ body::before {
 }
 
 .stat-box p {
-  font-size: 3rem;
+  font-size: 1.8rem;
   font-weight: bold;
   color: #38bdf8;
 }
@@ -137,8 +137,8 @@ body::before {
 .word-box {
   background: rgba(255, 255, 255, 0.08);
   border: 2px solid rgba(59, 130, 246, 0.6);
-  border-radius: 16px;
-  padding: 25px 20px;
+  border-radius: 20px;
+  padding: 26px 20px;
   margin-bottom: 20px;
 }
 
@@ -157,17 +157,17 @@ body::before {
 }
 
 #word-input {
-  width: 90%;
+  width: 100%;
+  max-width: 700px;
   padding: 15px;
-  font-size: 1.1rem;
-  border-radius: 12px;
+  font-size: 1.05rem;
+  border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   outline: none;
-  margin-bottom: 20px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.08);
+  margin-bottom: 18px;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.55);
   color: #ffffff;
-  backdrop-filter: blur(6px);
 }
 
 #word-input::placeholder {
