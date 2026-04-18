@@ -243,10 +243,10 @@ button:hover {
   background: black;
 }
 #high-scores {
-  margin-top: 15 auto 25px auto;
-  padding: 16px;
-  max-width: 500px;
-  border-radius: 16px;
+  margin-top: 18 auto 22px auto;
+  padding: 18px 20px;
+  max-width: 760px;
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.18);
   text-align: center;
@@ -255,29 +255,31 @@ button:hover {
 }
 
 #high-scores h3 {
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   color: #ffffff;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.4);
  }
 
 #scores-list {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px;
+  gap: 10px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 #scores-list li {
-  margin: 10px 0;
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 8px 14px;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.05);
   color: #dbeafe;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.85rem;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+  font-size: 0.9rem;
+  min-width: 110px;
+  text-align: center;
 }
 
 #scores-list li:first-child {
