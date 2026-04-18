@@ -1,79 +1,46 @@
-#  BlinkType  Fast Typing Game
+# BlinkType  High Score Typing Game
 
-BlinkType is an interactive typing game designed to test speed, focus, and accuracy.
- Players race against time to type as many words correctly as possible.
+## Description
+BlinkType is a fast typing web game where players type words within a limited time. This version of the game focuses on a **high score system**, where player results are saved, sorted, and displayed after each game.
 
----
+## Key Feature: High Score System
+- Stores player scores using **localStorage**
+- Each score includes:
+  - Hits (correct words)
+  - Percentage (accuracy)
+  - Date
+- Scores are sorted by **highest hits**
+- Displays the **Top 9 scores**
+- Scoreboard updates automatically after each game
 
-##  Game Overview
+## Other Features
+- 99-second typing challenge
+- Random word generation
+- Real-time hit counter
+- Final score display
+- Clean and modern UI
 
--  99-second countdown
--  90 randomized words
--  Score tracking (hits)
--  Final results with performance summary
--  Background music during gameplay
--  Restart game without reloading the page
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
+- localStorage
+- JSON (JSON.stringify & JSON.parse)
 
----
+## How It Works
+1. Player starts the game
+2. Types words as fast as possible
+3. Score is calculated at the end
+4. Score is saved in localStorage
+5. Scores are sorted and top 9 are displayed in the scoreboard
 
-##  Gameplay Instructions
+## How to Play
+1. Click "Start Game"
+2. Type the displayed word
+3. Press Enter after each word
+4. Try to achieve the highest score
+5. View your score and compare with top scores
 
-1. Click **Start Game**
-2. A word appears on the screen
-3. Type the word correctly in the input field (case-insensitive)
-4. A new word replaces it as soon as it's spelled correctly
-5. Continue typing each word as fast as possible
-6. Game ends when time runs out or all words are completed
-
----
-
-##  Final Score Summary
-
-At the end of the game, players can view:
--  Date of the game
--  Number of completed words (hits)
--  Percentage of words completed overall
-
----
-
-##  Technologies
-
-- HTML5  
-- CSS3 (Glassmorphism UI + animations)  
-- JavaScript (Object-Oriented Programming)
-
----
-
-##  Design Features
-
-- Modern glass-style UI  
-- Smooth animations and hover effects  
-- Responsive layout  
-- Clean and minimal interface  
-
----
-
-##  Audio Feature
-
-- Background music plays when the game starts  
-- Music stops automatically when the game ends  
-
----
-
-##  Repository
-https://github.com/jaspreet204/final-project_oojs
-
-
----
-
-##  Team
-
-- Jaspreet  
-- Blake  
-
----
-
-## Notes
-
-This project was developed as part of an Object-Oriented JavaScript course.
- It demonstrates the use of DOM manipulation, event handling, and class-based programming in a real-world interactive application.
+## Authors
+- Jaspreet  UI Design (HTML, CSS, Scoreboard Layout)
+- Blake  Game Logic (JavaScript, localStorage, Sorting System)
