@@ -243,42 +243,41 @@ button:hover {
   background: black;
 }
 #high-scores {
-  margin-top: 25px;
-  padding: 20px;
-  width: 250px;
-  min-height: 300px;
+  margin-top: 15 auto 25px auto;
+  padding: 16px;
+  max-width: 500px;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  text-align: left;
-    box-shadow: 0 0 15px rgba(59, 130, 246, 0.2);
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
   backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 #high-scores h3 {
-  text-align: center;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: #ffffff;
-  margin-bottom: 15px;
-  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-}
+  margin-bottom: 12px;
+ }
 
 #scores-list {
-  list-style-position: inside;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  list-style: none;
   padding: 0;
   margin: 0;
 }
 
 #scores-list li {
   margin: 10px 0;
-  padding: 10px 12px;
-  border-radius: 10px;
+  padding: 8px 12px;
+  border-radius: 8px;
   background: rgba(255, 255, 255, 0.05);
   color: #dbeafe;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 0.95rem;
-  text-align: center;
-  font-weight: 500;
+  font-size: 0.85rem;
 }
 
 #scores-list li:first-child {
