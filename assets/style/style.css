@@ -17,6 +17,7 @@ body {
   background: url("../media/game.background.jpg") no-repeat center center/cover;
 }
 
+/*
 body::before {
   content: "";
   position: fixed;
@@ -24,6 +25,7 @@ body::before {
   background: rgba(0, 0, 0, 0.6);
   z-index: 0;
 }
+*/
 
 .container {
   width: 100%;
@@ -158,7 +160,7 @@ body::before {
 #word-input {
   width: 100%;
   max-width: 760px;
-  display: block;
+  /* display: block; */
   margin-bottom: 10px;
   padding: 10px 12px;
   font-size: 1.05rem;

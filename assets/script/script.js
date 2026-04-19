@@ -12,20 +12,22 @@ const finalDate = document.getElementById('final-date')
 const finalHits = document.getElementById('final-hits')
 const finalPercentage = document.getElementById('final-percentage')
 
-class Score {
-    #date;
-    #hits;
-    #percentage;
+const displayHighScores = document.getElementById('scores-list')
 
-    constructor(hits, percentage){
-        this.#date = new Date();
-        this.#hits = hits;
-        this.#percentage = percentage;
+class Score {
+    date;
+    hits;
+    percentage;
+
+    constructor(hits){
+        this.date = new Date();
+        this.hits = hits;
+        this.percentage = (hits/90).toFixed(3);
     }
 
-    get date() { return this.#date }
-    get hits() { return this.#hits }
-    get percentage() { return this.#percentage }
+    get date() { return this.date }
+    get hits() { return this.hits }
+    get percentage() { return this.percentage }
 }
 
 const music = new Audio('./assets/media/game-music.mp3');
@@ -47,6 +49,7 @@ let currentWord;
 let hits = 0;
 let time = 99;
 let ticker;
+let scores = [];
 
 function resetGame (){
     wordinput.removeAttribute("disabled");
@@ -98,13 +101,32 @@ function nextWord(){
 
 function endGame() {
     wordinput.setAttribute("disabled", '');
-    let score = new Score(hits, (hits/90));
+    let score = new Score(hits);
+    scores.push(score);
+    localStorage.setItem('Scores', JSON.stringify(scores));
+    updateScoreboard();
     finalDate.innerText = `Date: ${score.date.toDateString()}`
     finalHits.innerText = `Score: ${score.hits}`
     finalPercentage.innerText = `Completed: ${score.percentage}%`
     displayScore.showModal();
     wordinput.value = '';
     music.pause();
+}
+
+function updateScoreboard(){
+    scores = JSON.parse(localStorage.getItem('Scores'));
+    displayHighScores.innerHTML = '';
+    // Sorting
+    scores.sort((a, b) => a.hits < b.hits)
+    scores.splice(9)
+    for(let i = 0; i < scores.length; i++){
+        let highscore = document.createElement('li')
+        highscore.innerText = (`${scores[i].hits} - ${scores[i].percentage}%`);
+        displayHighScores.appendChild(highscore);
+    }
+}
+if(localStorage.getItem('Scores') !== null){
+    updateScoreboard();
 }
 
 start.addEventListener("click", function () {
