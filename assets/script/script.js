@@ -20,9 +20,9 @@ class Score {
     percentage;
 
     constructor(hits){
-        this.date = new Date();
+        this.date = (new Date()).toLocaleString('en-ca', {month: 'short', day: '2-digit'});
         this.hits = hits;
-        this.percentage = (hits/90).toFixed(3);
+        this.percentage = ((hits/90)*100).toFixed(3);
     }
 
     get date() { return this.date }
@@ -105,7 +105,7 @@ function endGame() {
     scores.push(score);
     localStorage.setItem('Scores', JSON.stringify(scores));
     updateScoreboard();
-    finalDate.innerText = `Date: ${score.date.toDateString()}`
+    finalDate.innerText = `Date: ${score.date}`
     finalHits.innerText = `Score: ${score.hits}`
     finalPercentage.innerText = `Completed: ${score.percentage}%`
     displayScore.showModal();
@@ -116,12 +116,11 @@ function endGame() {
 function updateScoreboard(){
     scores = JSON.parse(localStorage.getItem('Scores'));
     displayHighScores.innerHTML = '';
-    // Sorting
     scores.sort((a, b) => a.hits < b.hits)
     scores.splice(9)
     for(let i = 0; i < scores.length; i++){
         let highscore = document.createElement('li')
-        highscore.innerText = (`${scores[i].hits} - ${scores[i].percentage}%`);
+        highscore.innerText = (`${scores[i].hits} - ${scores[i].percentage}% - ${scores[i].date}`);
         displayHighScores.appendChild(highscore);
     }
 }
